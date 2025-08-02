@@ -62,7 +62,7 @@ Follow these steps to set up and run NutriPlan AI locally.
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.11
 - Node.js (LTS) & npm (or yarn)
 - Git
 
@@ -88,30 +88,9 @@ Follow these steps to set up and run NutriPlan AI locally.
     ```
 
 4.  **Set up Alembic for database migrations:**
-    ```bash
-    alembic init alembic
     ```
-    * **Edit `alembic.ini`**: Find the line `# sqlalchemy.url =` and uncomment it, setting the database URL:
-        ```ini
-        sqlalchemy.url = sqlite:///nutriplan.db
-        ```
-    * **Edit `alembic/env.py`**: Add the following imports and set `target_metadata` to point to your SQLAlchemy `Base`:
-        ```python
-        import os
-        import sys
-        sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-        from app.db.models.base import Base # Import your Base
-
-        # ... (rest of the file)
-
-        target_metadata = Base.metadata
-        ```
-
-5.  **Create initial database migrations:**
-    ```bash
-    alembic revision --autogenerate -m "Initial database setup"
     alembic upgrade head
-    ```
+  
 
 6.  **Seed the database with meal data:**
     Ensure `data/normalized_meals.json` exists at the project root (`nutriplan_ai/data/normalized_meals.json`).
@@ -168,16 +147,6 @@ NutriPlan AI uses SQLite for its database and Alembic for migrations.
 
 - **Goal Classifier**: A TensorFlow model using Hugging Face Transformers is located in `backend/models/goal_classifier_model/` and `backend/models/tokenizer/`.
 - **Feedback Model**: A scikit-learn model in `backend/app/core/feedback.py` adapts meal scoring based on user feedback.
-
-## Contributing
-
-Contributions are welcome! Please follow the standard Git workflow:
-1.  Fork the repository.
-2.  Create a new branch for your feature or bug fix.
-3.  Make your changes.
-4.  Commit your changes following conventional commit messages.
-5.  Push your branch.
-6.  Open a Pull Request.
 
 ## License
 
