@@ -92,8 +92,7 @@ First, you need to download the project code from GitHub.
 2.  Navigate to the directory where you want to save the project (e.g., `Documents/Projects/`).
 3.  Execute the `git clone` command. Replace `desolateMesh` with the actual GitHub username where the repository is hosted.
     ```bash
-    git clone [https://github.com/desolateMesh/NutriPlanAI-Published.git](https://github.com/desolateMesh/NutriPlanAI-Published.git)
-    ```
+    git clone https://github.com/desolateMesh/NutriPlan
 4.  Move into the newly cloned project directory:
     ```bash
     cd NutriPlanAI-Published
@@ -112,10 +111,10 @@ Now, let's prepare the Python backend environment and database.
     ```bash
     cd backend
     ```
-2.  **Create a Python Virtual Environment:**
-    This creates a clean, isolated space for your Python packages.
+2.  **Create a Python Virtual Environment (using Python 3.11):**
+    This creates a clean, isolated space for your Python packages using the specified Python 3.11 interpreter.
     ```bash
-    python -m venv venv
+    py -3.11 -m venv venv
     ```
 3.  **Activate the Virtual Environment:**
     You **must** activate this environment every time you open a new terminal session to work on the backend. You'll know it's active when `(venv)` appears at the beginning of your command prompt.
@@ -149,18 +148,23 @@ Now, let's prepare the Python backend environment and database.
 
 Next, we'll install the necessary JavaScript packages for your React application.
 
-1.  **Navigate back to the main project directory, then into `frontend`:**
+1.  **Important: Open a NEW terminal window OR deactivate your backend's Python virtual environment.**
+    Running `npm` commands while a Python virtual environment is active can sometimes lead to unexpected behavior.
+    * **To open a new terminal:** Just open a fresh terminal window.
+    * **To deactivate the current virtual environment:** Type `deactivate` and press Enter. The `(venv)` should disappear from your prompt.
+
+2.  **Navigate back to the main project directory, then into `frontend`:**
     ```bash
     cd ..
     cd frontend
     ```
-2.  **Install Frontend Dependencies:**
+3.  **Install Frontend Dependencies:**
     This command reads your `package.json` file and installs all the JavaScript libraries (React, Tailwind CSS, Axios, etc.) into your `node_modules` folder.
     ```bash
     npm install
     ```
     *(You might see messages about "funding" or "low severity vulnerability"; these are generally safe to ignore for development purposes or can be addressed by running `npm audit fix`.)*
-3.  **Create Frontend `.env` File:**
+4.  **Create Frontend `.env` File:**
     This file configures the API base URL for your frontend to communicate with your backend.
     * In your `frontend` directory, create a new file named `.env` (note the dot).
     * Add the following line to it:
@@ -168,7 +172,7 @@ Next, we'll install the necessary JavaScript packages for your React application
         VITE_API_BASE_URL=http://localhost:8000/api
         ```
     *(This file is specific to the frontend's environment variables and should not be committed to Git; it's already ignored by `frontend/.gitignore`.)*
-
+    
 ## Running the Application
 
 Now that both the backend and frontend are set up, you can run them concurrently. You will need **two separate terminal windows** for this.
