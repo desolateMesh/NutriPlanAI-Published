@@ -1,6 +1,6 @@
 # NutriPlan AI
 
-NutriPlan AI is an intelligent meal planning application designed to generate personalized 7-day meal plans based on user goals, dietary restrictions, and preferences. It leverages machine learning models for goal classification and adaptive learning to refine meal suggestions over time[cite: 39].
+NutriPlan AI is an intelligent meal planning application designed to generate personalized 7-day meal plans based on user goals, dietary restrictions, and preferences. It leverages machine learning models for goal classification and adaptive learning to refine meal suggestions over time.
 
 ## Table of Contents
 
@@ -18,42 +18,42 @@ NutriPlan AI is an intelligent meal planning application designed to generate pe
 
 ## Features
 
-- **Personalized Meal Plans**: Generates a tailored 7-day meal plan for users, taking into account their unique profile and objectives[cite: 39].
-- **Goal Classification**: Interprets freeform user goals using a Neural Goal Classifier (NLP) powered by Hugging Face Transformers and TensorFlow[cite: 45].
-- **Adaptive Learning**: Employs a scikit-learn model to adjust meal scoring based on user behavior[cite: 47].
-- **Dietary Rule Engine**: Filters meal candidates based on dietary tags or caloric constraints[cite: 47].
-- **User Feedback System**: Processes user feedback to refine meal suggestions[cite: 44, 47].
-- **SQLite Database**: Stores user profiles, meal data, meal plans, and feedback for persistent storage[cite: 76, 90].
-- **Web Scraping (Data Preparation)**: Utilizes BeautifulSoup and `requests` to gather raw meal data[cite: 52, 89].
-- **Responsive User Interface**: Built with React.js and TypeScript for a dynamic and interactive user experience[cite: 42, 81, 82].
+- **Personalized Meal Plans**: Generates a tailored 7-day meal plan for users, taking into account their unique profile and objectives.
+- **Goal Classification**: Interprets freeform user goals using a Neural Goal Classifier (NLP) powered by Hugging Face Transformers and TensorFlow.
+- **Adaptive Learning**: Employs a scikit-learn model to adjust meal scoring based on user behavior.
+- **Dietary Rule Engine**: Filters meal candidates based on dietary tags or caloric constraints.
+- **User Feedback System**: Processes user feedback to refine meal suggestions.
+- **SQLite Database**: Stores user profiles, meal data, meal plans, and feedback for persistent storage.
+- **Web Scraping (Data Preparation)**: Utilizes BeautifulSoup and `requests` to gather raw meal data.
+- **Responsive User Interface**: Built with React.js and TypeScript for a dynamic and interactive user experience.
 
 ## Technologies Used
 
 ### Backend (AI + API Layer)
-- **Python 3.x**: Core application logic[cite: 70].
-- **FastAPI**: Web framework for building the API endpoints[cite: 41, 71].
-- **TensorFlow**: Machine learning framework for the Neural Goal Classifier model[cite: 72].
-- **Hugging Face Transformers**: Provides pre-trained models for NLP tasks[cite: 73].
-- **pandas**: Data manipulation and analysis for handling meal data, macros, and calories[cite: 46, 74].
-- **scikit-learn**: Machine learning library for the adaptive feedback model[cite: 47, 75].
-- **SQLite**: Lightweight embedded database for users, plans, and meals[cite: 51, 61, 76].
-- **SQLAlchemy**: ORM for abstracting SQLite interactions[cite: 77].
+- **Python 3.x**: Core application logic.
+- **FastAPI**: Web framework for building the API endpoints.
+- **TensorFlow**: Machine learning framework for the Neural Goal Classifier model.
+- **Hugging Face Transformers**: Provides pre-trained models for NLP tasks.
+- **pandas**: Data manipulation and analysis for handling meal data, macros, and calories.
+- **scikit-learn**: Machine learning library for the adaptive feedback model.
+- **SQLite**: Lightweight embedded database for users, plans, and meals.
+- **SQLAlchemy**: ORM for abstracting SQLite interactions.
 - **Alembic**: Database migration tool.
-- **`python-dotenv`**: Manages secure environment variables and application configurations[cite: 53, 78, 96].
-- **BeautifulSoup**: For web scraping meal data[cite: 52, 66, 89].
-- **`requests`**: For making HTTP requests in web scraping[cite: 52, 89].
-- **PyInstaller**: For packaging the backend into an executable[cite: 93].
+- **`python-dotenv`**: Manages secure environment variables and application configurations.
+- **BeautifulSoup**: For web scraping meal data.
+- **`requests`**: For making HTTP requests in web scraping.
+- **PyInstaller**: For packaging the backend into an executable.
 
 ### Frontend (User Interface)
-- **React.js**: JavaScript library for building the user interface[cite: 42, 81].
-- **TypeScript**: Strongly typed JavaScript for frontend logic[cite: 42, 82].
-- **axios**: HTTP client for communicating with the FastAPI backend[cite: 55, 83].
-- **Tailwind CSS**: Utility-first CSS framework for responsive styling[cite: 84].
-- **Vite**: Frontend build tool for a fast development server[cite: 94].
+- **React.js**: JavaScript library for building the user interface.
+- **TypeScript**: Strongly typed JavaScript for frontend logic.
+- **axios**: HTTP client for communicating with the FastAPI backend.
+- **Tailwind CSS**: Utility-first CSS framework for responsive styling.
+- **Vite**: Frontend build tool for a fast development server.
 
 ### Development & DevOps
-- **Git**: Version control system[cite: 95].
-- **GitHub**: Code repository and collaboration platform[cite: 95].
+- **Git**: Version control system.
+- **GitHub**: Code repository and collaboration platform.
 - **`pytest`**: Python testing framework.
 
 ## Getting Started
@@ -159,15 +159,15 @@ Follow these steps to set up and run NutriPlan AI locally.
 
 ## Database Management
 
-NutriPlan AI uses SQLite for its database and Alembic for migrations[cite: 76].
+NutriPlan AI uses SQLite for its database and Alembic for migrations.
 - **Database File**: `nutriplan_ai/backend/nutriplan.db`
-- **Models**: Defined in `backend/app/db/models/`[cite: 49].
-- **Seeding**: `backend/app/db/seed_meals.py` loads data from `data/normalized_meals.json` into the `Meal` table[cite: 52].
+- **Models**: Defined in `backend/app/db/models/`.
+- **Seeding**: `backend/app/db/seed_meals.py` loads data from `data/normalized_meals.json` into the `Meal` table.
 
 ## Machine Learning Models
 
-- **Goal Classifier**: A TensorFlow model using Hugging Face Transformers is located in `backend/models/goal_classifier_model/` and `backend/models/tokenizer/`[cite: 45].
-- **Feedback Model**: A scikit-learn model in `backend/app/core/feedback.py` adapts meal scoring based on user feedback[cite: 47].
+- **Goal Classifier**: A TensorFlow model using Hugging Face Transformers is located in `backend/models/goal_classifier_model/` and `backend/models/tokenizer/`.
+- **Feedback Model**: A scikit-learn model in `backend/app/core/feedback.py` adapts meal scoring based on user feedback.
 
 ## Contributing
 
